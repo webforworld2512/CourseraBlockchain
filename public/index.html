@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Getting Started with Ethereum</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div id="loader"></div>
+		<div class="container" id="loadedOptions">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="title">Getting Started with Ethereum</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-8 text-center">
+					<p>It looks like that you've already set up Ethereum completely or had at least initiated the process. You may choose from one of the following options below to proceed. </p>
+					<button type="button" class="btn btn-primary btn-large" style="margin-bottom: 20px;" id="startEthereumMove">Start Ethereum and Move to Part 2</button><br/>
+					<button type="button" class="btn btn-primary btn-large" style="margin-bottom: 20px;" id="moveToStep2">Move to Part 2</button><br/>
+					<button type="button" class="btn btn-danger btn-large" id="deleteEverything">Delete Everything and start Fresh</button>
+					<p><b>Warning:</b> Doing so will delete all the Ethereum node data including your accounts and your account balances. Only do so if you are willing to lose all of it.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="mainContent">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h1 class="title">Getting Started with Ethereum</h1>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div id="accordion" role="tablist" aria-multiselectable="true">
+				  <div class="card">
+					<div class="card-header" role="tab" id="headingOne">
+					  <h5 class="mb-0">
+						<a data-toggle="collapse" data-parent="#accordion" href="#createAccount" aria-expanded="true" aria-controls="createAccount">1. Create Ethereum accounts</a>
+					  </h5>
+					</div>
+					<div id="createAccount" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+					  <div class="card-block">
+						<p>In this first step, we need to create two new accounts for two of the Ethereum nodes. These 2 accounts will serve as the base accounts on their respective nodes. For creating your accounts, you'll need a password that you will use to lock or unlock your account when initiating a transaction.  Please enter your password below for two accounts and click create accounts to get started.</p>
+						<form id="createNewAccount" class="data-entry-form">
+							<div class="form-group row">
+								<div class="col-12">
+									<input type="text" class="form-control" id="passwordNode1" placeholder="Enter your Password here for Node_1">	
+								</div>
+								<div class="col-12">
+									<input type="text" class="form-control" id="passwordNode2" placeholder="Enter your Password here for Node_2">	
+								</div>
+								<div class="col-12 text-center">
+									<button type="submit" class="btn btn-primary">Create Accounts</button>
+								</div>
+							</div>
+							<label for="accountAddressNode1">Generated Account address in Node_1</label>
+							<input type="text" class="form-control" id="accountAddressNode1" placeholder="Your Account Addresss for Node_1" readonly>
+							<label for="accountAddressNode2">Generated Account address in Node_2</label>
+							<input type="text" class="form-control" id="accountAddressNode2" placeholder="Your Account Addresss for Node_2" readonly>
+						</form>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card">
+					<div class="card-header" role="tab" id="headingOne">
+					  <h5 class="mb-0">
+						<a data-toggle="collapse" data-parent="#accordion" href="#generateKeys" aria-expanded="true" aria-controls="generateKeys">2. Create the Genesis files</a>
+					  </h5>
+					</div>
+					<div id="generateKeys" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+					  <div class="card-block">
+						<p>Enter the contents for the custom Genesis file in the box below. The content here will be used to initialize both of your Ethereum nodes in the next step.</p>
+						<form id="customGenesis" class="data-entry-form">
+							<div class="form-group row">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								    <label for="genesisContent">Contents of the Genesis file</label>	
+									<textarea class="form-control" id="genesisContent" rows="8" readonly></textarea>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<button type="submit" class="btn btn-primary">Create files</button>
+								</div>
+							</div>
+							<label for="genesisFileStatus">Genesis File Status</label>
+							<input type="text" class="form-control" id="genesisFileStatus" placeholder="File not generated yet" readonly>
+						</form>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card">
+					<div class="card-header" role="tab" id="headingOne">
+					  <h5 class="mb-0">
+						<a data-toggle="collapse" data-parent="#accordion" href="#encrypt" aria-expanded="true" aria-controls="encrypt">3. Initialize a new Genesis Block for both the Nodes</a>
+					  </h5>
+					</div>
+					<div id="encrypt" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+					  <div class="card-block">
+						<p>In this step, we will initialize the Ethereum nodes using the custom Genesis file that you created in the previous step. If you did not create a file, please complete step 2 before performing step 3.</p>
+						<form id="initializeEthereum" class="data-entry-form">
+							<div class="form-group text-center">
+								<button type="submit" class="btn btn-primary">Initialize Genesis Blocks</button>
+							</div>
+							<label for="ethereumInitStatus">Genesis Block Status</label>
+							<input type="text" class="form-control" id="ethereumInitStatus" placeholder="Not initialized yet" readonly>
+						</form>
+					  </div>
+					</div>
+				  </div>
+				  <div class="card">
+					<div class="card-header" role="tab" id="headingOne">
+					  <h5 class="mb-0">
+						<a data-toggle="collapse" data-parent="#accordion" href="#decrypt" aria-expanded="true" aria-controls="decrypt">4. Start the Ethereum Nodes</a>
+					  </h5>
+					</div>
+					<div id="decrypt" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+					  <div class="card-block">
+						<p>Finally, we will start the Ethereum nodes to be able to join the Blockchain and transact on it. To do so, simply click the button below and then wait for the status to change. Then, move to the next step. </p>
+						<form id="startNode" class="data-entry-form">
+							<div class="form-group text-center">
+								<button type="submit" class="btn btn-primary">Start Ethereum nodes</button>
+							</div>
+							<label for="ethereumNodeStatus">Ethereum Node Status</label>
+							<input type="text" class="form-control" id="ethereumNodeStatus" placeholder="Ethereum Node Status" readonly>
+						</form>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div class="row text-center" style="padding-top:10px; padding-bottom: 30px;">
+				<div class="col-12">
+					<button type="button" class="btn btn-dark btn-large" disabled id="nextStep">Move to Part 2</button>
+				</div>
+			</div>
+		</div>		
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript">
+		$("#mainContent").fadeOut("fast");
+		$("#loadedOptions").fadeOut("fast");
+		$(window).on('load', function(){
+			$.ajax({
+				url: '/api/checkEthereum', 
+				type: 'POST', 
+				contentType: 'application/json'}
+			).done(function(resp){
+				if(resp.status == "error"){
+					alert(resp.errorDetails);
+					$("#loadedOptions").fadeIn('fast');
+					$("#loader").fadeOut('slow');
+
+				}else if(resp.status == "complete"){
+					$("#mainContent").fadeIn("slow");
+					$("#loader").fadeOut('slow');
+				}
+			});
+			var genesisContent = {"config":{"chainId":13,"homesteadBlock":0,"eip155Block":0,"eip158Block":0},"difficulty":"0x20000","gasLimit":"0x2fefd8","alloc":{},"nonce":"0x0000000000000042","timestamp":"0x0","parentHash":"0x0000000000000000000000000000000000000000000000000000000000000000","extraData":"","mixhash":"0x0000000000000000000000000000000000000000000000000000000000000000","coinbase":"0x0000000000000000000000000000000000000000"};
+			$("#genesisContent").val(JSON.stringify(genesisContent, null, 4));
+		});
+	</script>
+	</body>
+</html>
